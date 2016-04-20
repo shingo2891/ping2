@@ -16,6 +16,7 @@ STATIC_DEFAULTGW = ""
 FILE_NAME_LOG = ""
 PING_COUNT = ""
 
+
 # ------------------------
 # Version infomation
 # ------------------------
@@ -82,7 +83,7 @@ def get_setting():
     global FILE_NAME_LOG
     global PING_COUNT
 
-    if GotFile == False:
+    if GotFile is False:
         print("setting.py:ファイル読み込み")
         inifile = configparser.SafeConfigParser()
         inifile.read("./setting.ini")
