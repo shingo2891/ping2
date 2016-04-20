@@ -25,12 +25,13 @@ def ping_test(IP_ADDR):
         out_mes = p.stdout.readlines()
         for var in range(0, len(out_mes)):
             # Windowsの場合メッセージはcp932形式で出力される
-            mes = "out_mes[" + str(var) + "]:" + out_mes[var].decode('cp932').rstrip("\r\n")
+            mes = "out_mes[" + str(var) + "]:"
+            + out_mes[var].decode('cp932').rstrip("\r\n")
             logging.debug(mes)
 
         ret = p.wait()
-        out_ret = "return: %d" % ret
-        out_err = "stderr: %s" % (p.stderr.readlines())
+        # out_ret = "return: %d" % ret
+        # out_err = "stderr: %s" % (p.stderr.readlines())
         # logging.debug (out_ret)
         # logging.debug (out_err)
         mes1 = out_mes[2].decode('cp932').rstrip("\r\n")
