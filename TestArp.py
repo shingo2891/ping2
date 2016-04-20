@@ -33,12 +33,13 @@ def get_mac_from_ip(IP_ADDR):
 
     for var in range(0, len(out_mes)):
         # Windowsの場合メッセージはcp932形式で出力される
-        mes = "out_mes[" + str(var) + "]:" + out_mes[var].decode('cp932').rstrip("\r\n")
+        mes = "out_mes[" + str(var) + "]:"
+        + out_mes[var].decode('cp932').rstrip("\r\n")
         logging.debug(mes)
 
     ret = p.wait()
-    out_ret = "return: %d" % ret
-    out_err = "stderr: %s" % (p.stderr.readlines())
+    # out_ret = "return: %d" % ret
+    # out_err = "stderr: %s" % (p.stderr.readlines())
     # logging.debug(out_ret)
     # logging.debug(out_err)
     # logging.debug(type(out_mes[3]))
@@ -60,7 +61,6 @@ def get_mac_from_ip(IP_ADDR):
     for var in range(0, len(mes2)):
         mes3 = mes2[var]
         logging.debug("str_mac[" + str(var) + "]" + mes3)
-
 
     str_ip = mes2[0]
     logging.debug("IP " + str_ip)
